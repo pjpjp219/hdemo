@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
  * @author nixx
  * @date 2022年5月16日 22点04分
  */
-public class _001_CustomProducer {
+public class _001_BaseProducer {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //配置生产者

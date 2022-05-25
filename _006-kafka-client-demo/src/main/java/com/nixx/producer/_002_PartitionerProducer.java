@@ -14,7 +14,7 @@ import java.util.Properties;
  * @author nixx
  * @date   2022年5月20日 10点25分
  */
-public class _002_CustomPartitionerProducer {
+public class _002_PartitionerProducer {
 
     /**
      * 执行测试前要先手动创建分区 1 和 2
@@ -29,9 +29,8 @@ public class _002_CustomPartitionerProducer {
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.PARTITIONER_CLASS_CONFIG, MyPartitioner.class.getName());
 
-        /*=========测试块========*/
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
-        producer.send(new ProducerRecord<>("test", "0", "hello"), new Callback() {
+        producer.send(new ProducerRecord<>("topic-test", "0", "hello"), new Callback() {
             @Override
             public void onCompletion(RecordMetadata metadata, Exception exception) {
                 if (exception != null) {
@@ -42,7 +41,6 @@ public class _002_CustomPartitionerProducer {
             }
         });
         producer.close();
-        /*=========测试块========*/
     }
 
 

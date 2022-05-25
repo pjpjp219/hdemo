@@ -10,16 +10,19 @@ import com.nixx.producer.*;
  * .\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test
  *
  * 最基础的生产者配置，以及一些常用的发送方法示例
- * {@link _001_CustomProducer}
+ * {@link _001_BaseProducer}
  *
  * 生产者配置自定义分区器，根据不同的条件将数据发往不同的分区
- * {@link _002_CustomPartitionerProducer}
+ * {@link _002_PartitionerProducer}
  *
  * 提高了吞吐量的生产者配置
- * {@link _003_ProducerThroughput}
+ * {@link _003_ThroughputProducer}
  *
  * 保证了消息可靠性的生产者配置
- * {@link _004_ProducerDataReliable}
+ * {@link _004_DataReliableProducer}
+ *
+ * 生产者如何开启事务
+ * {@link _005_TransactionTest}
  * *****************************************************
  */
 @SpringBootApplication
